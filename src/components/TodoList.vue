@@ -9,7 +9,7 @@
           <td>Compelete</td>
        </tr>      
         <tr v-for="todo in todos"  :key="todo.id">
-               <td>1</td>
+               <td>{{ todo.title }}</td>
                <td>1</td>
          </tr>       
    </table>
@@ -60,5 +60,9 @@ data() {
 }
 .button:hover{
    cursor: pointer;
+}
+table{
+   margin: 0 auto;
+   margin-top: 50px;
 }
 </style>
