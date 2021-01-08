@@ -1,6 +1,6 @@
 .<template>
   <h2>Hi this is a To Do List APP </h2>
-  <input type="text" class="todo-input" ><button class="button">Add</button>
+  <input v-model="newTodo" type="text" class="todo-input" ><button class="button"  type="submit">Add</button>
 </template>
 
 <script>
@@ -29,5 +29,8 @@ export default {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
+}
+.button:hover{
+   cursor: pointer;
 }
 </style>
