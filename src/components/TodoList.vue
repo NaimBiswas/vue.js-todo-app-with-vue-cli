@@ -1,7 +1,7 @@
 .<template>
   <h2>Hi this is a To Do APP </h2>
   <label for="">Enter Your Title:</label><br>
-  <input  v-model="newTodo" type="text" class="todo-input" ><br>
+  <input  @keyup.enter="addTodo" v-model="newTodo" type="text" class="todo-input" ><br>
   
   
     <table border="1">
@@ -22,19 +22,24 @@
 
 <script>
 export default {
-data() {
-   return {
-      newTodo: '',
-      todos:[
-        {'id':1, 'title': 'Finish Vue ScreanCast', 'completed': false},
-        
-        {'id':2, 'title': 'Take Over Wold', 'completed': false},
-        
-        {'id':3, 'title': 'Failer Is better to success', 'completed': false}, 
-      ],
+   data() {
+      return {
+         newTodo: '',
+         todos:[
+         {'id':1, 'title': 'Finish Vue ScreanCast', 'completed': false},
+         
+         {'id':2, 'title': 'Take Over Wold', 'completed': false},
+         
+         {'id':3, 'title': 'Failer Is better to success', 'completed': false}, 
+         ],
+      }
+      
+   },
+   methods:{
+      addTodo(){
+         
+      }
    }
-   
-},
 
 }
 </script>
