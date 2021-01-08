@@ -1,6 +1,6 @@
 .<template>
   <h2>Hi this is a To Do APP </h2>
-  <input v-model="newTodo" type="text" class="todo-input" ><button class="button"  type="submit">Add</button><br>
+  <input v-model="newTodo" type="text" class="todo-input" ><br>
   
   
     <table border="1">
@@ -10,7 +10,7 @@
        </tr>      
         <tr v-for="todo in todos"  :key="todo.id">
                <td>{{ todo.title }}</td>
-               <td>1</td>
+               <td  >Completed</td>
          </tr>       
    </table>
      
@@ -32,6 +32,7 @@ data() {
         {'id':3, 'title': 'Failer Is better to success', 'completed': false}, 
       ],
    }
+   
 },
 
 }
