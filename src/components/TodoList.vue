@@ -42,7 +42,8 @@ data() {
 .todo-input{
    border-radius: 5px;
     border-color: #41b883;
-    padding: 12px;
+    padding: 10px;
+    padding-left: 100px;
 }
 .button {
    
