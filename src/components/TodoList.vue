@@ -1,6 +1,7 @@
 .<template>
   <h2>Hi this is a To Do APP </h2>
-  <input v-model="newTodo" type="text" class="todo-input" ><br>
+  <label for="">Enter Your Title:</label><br>
+  <input  v-model="newTodo" type="text" class="todo-input" ><br>
   
   
     <table border="1">
