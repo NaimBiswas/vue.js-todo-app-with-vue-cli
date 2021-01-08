@@ -40,13 +40,16 @@ export default {
    },
    methods:{
       addTodo(){
-         this.todos.push({
-            id: this.idForTodo,
-            title: this.newTodo,
-            completed: false,
-         });
-         this.newTodo = '';
-         this.idForTodo++;
+         if(!this.newTodo == ''){
+            this.todos.push({
+               id: this.idForTodo,
+               title: this.newTodo,
+               completed: false,
+            });
+            this.newTodo = '';
+            this.idForTodo++;
+         }
+         
       }
    }
 
