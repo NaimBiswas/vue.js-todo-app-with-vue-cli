@@ -2,10 +2,20 @@
   <h2>Hi this is a To Do APP </h2>
   <input v-model="newTodo" type="text" class="todo-input" ><button class="button"  type="submit">Add</button><br>
   
-  <div v-for="todo in todos"  :key="todo.id">
-    
-  </div>
   
+    <table border="1">
+     <tr>
+          <td>Title</td>
+          <td>Compelete</td>
+       </tr>      
+        <tr v-for="todo in todos"  :key="todo.id">
+               <td>1</td>
+               <td>1</td>
+         </tr>       
+   </table>
+     
+
+
   
 </template>
 
