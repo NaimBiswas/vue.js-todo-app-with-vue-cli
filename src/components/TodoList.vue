@@ -1,10 +1,28 @@
 .<template>
-  <h2>Hi this is a To Do List APP </h2>
-  <input v-model="newTodo" type="text" class="todo-input" ><button class="button"  type="submit">Add</button>
+  <h2>Hi this is a To Do APP </h2>
+  <input v-model="newTodo" type="text" class="todo-input" ><button class="button"  type="submit">Add</button><br>
+  
+  <div v-for="todo in todos"  :key="todo.id">
+    
+  </div>
+  
+  
 </template>
 
 <script>
 export default {
+data() {
+   return {
+      newTodo: '',
+      todos:[
+        {'id':1, 'title': 'Finish Vue ScreanCast', 'completed': false},
+        
+        {'id':2, 'title': 'Take Over Wold', 'completed': false},
+        
+        {'id':3, 'title': 'Failer Is better to success', 'completed': false}, 
+      ],
+   }
+},
 
 }
 </script>
