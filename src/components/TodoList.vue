@@ -6,10 +6,12 @@
   
     <table border="1">
      <tr>
+          <td>ID</td>
           <td>Title</td>
           <td>Compelete</td>
        </tr>      
         <tr v-for="todo in todos"  :key="todo.id">
+               <td>{{ todo.id }}</td>
                <td>{{ todo.title }}</td>
                <td  >Completed</td>
          </tr>       
@@ -25,6 +27,7 @@ export default {
    data() {
       return {
          newTodo: '',
+         idForTodo: 4,
          todos:[
          {'id':1, 'title': 'Finish Vue ScreanCast', 'completed': false},
          
@@ -37,7 +40,13 @@ export default {
    },
    methods:{
       addTodo(){
-         
+         this.todos.push({
+            id: this.idForTodo,
+            title: this.newTodo,
+            completed: false,
+         });
+         this.newTodo = '';
+         this.idForTodo++;
       }
    }
 
@@ -72,5 +81,6 @@ export default {
 table{
    margin: 0 auto;
    margin-top: 50px;
+   text-align: left;
 }
 </style>
