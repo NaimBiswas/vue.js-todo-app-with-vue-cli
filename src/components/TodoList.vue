@@ -15,7 +15,7 @@
                <td>{{ todo.id }}</td>
                
                
-               <td   
+               <td  class="title" 
                   @dblclick="editTodo(todo)"
                   v-if="!todo.edite"
                   >
@@ -38,12 +38,21 @@
                   >
                
                
-               <td v-if="todos.completed = todos.completed" >
-                  Complete <strong>{{ todos.completed }}</strong>
+               <td v-if="todo.completed" 
+               class=""
+               
+               >
+                 <button @click="cancleComplete(todo)">
+                    Complete 
+                  </button>
+                  <strong>{{ todo.completed }}</strong>
                </td>
+               
                <td v-else>
-                  Not Complete <strong>{{ todos.completed }}</strong>
+                 <button  @click="doneComplete(todo)"> Not Complete</button> <strong>{{ todo.completed }}</strong>
                </td>
+               
+               
                <td @click="removeTodo(index)" class="remove" style="text-align:center"  >&times;</td>
          </tr>       
    </table>
@@ -63,14 +72,14 @@ export default {
                {
                'id':1,
                'title': 'Finish Vue ScreanCast', 
-               'completed': true,
+               'completed': false,
                'edite': false,
                },
                
                {
                   'id':2, 
                   'title': 'Take Overg  Wold',
-                  'completed': true,
+                  'completed': false,
                   'edite': false,
                },
               
@@ -116,6 +125,12 @@ export default {
       cancleEdite(todo){
          todo.title = this.beforeEditCache
          todo.edite = false;
+      },
+      doneComplete(todo){
+         todo.completed = true;
+      },
+      cancleComplete(todo){
+          todo.completed = false;
       }
       
    }
@@ -124,6 +139,9 @@ export default {
 </script>
 
 <style>
+.title{
+   width: 600px;
+}
 .fff{
    
     margin-top: 10px;
@@ -169,5 +187,7 @@ input{
 }
 td{
    padding: 9px;
+   
 }
+
 </style>
