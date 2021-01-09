@@ -88,4 +88,9 @@ table{
    margin-top: 50px;
    text-align: left;
 }
+.remove{
+   cursor: pointer;
+   color: red;
+   font-size: 22px;
+}
 </style>
