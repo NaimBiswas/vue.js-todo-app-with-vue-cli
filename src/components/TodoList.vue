@@ -11,11 +11,11 @@
           <td>Compelete</td>
           <td>Action</td>
        </tr>      
-        <tr v-for="todo in todos"  :key="todo.id">
+        <tr v-for="(todo, index) in todos"  :key="todo.id">
                <td>{{ todo.id }}</td>
                <td>{{ todo.title }}</td>
                <td  >Completed</td>
-               <td @click="removeTodo" class="remove" style="text-align:center"  >&times;</td>
+               <td @click="removeTodo(index)" class="remove" style="text-align:center"  >&times;</td>
          </tr>       
    </table>
      
@@ -52,10 +52,10 @@ export default {
             this.idForTodo++;
          }
       },
-         removeTodo(){
-            
-         }
+      removeTodo(){
          
+      }
+      
    }
 
 }
