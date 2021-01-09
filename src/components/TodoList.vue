@@ -87,7 +87,7 @@ export default {
       editTodo(todo){
      
             todo.edite = true;
-            alert('this is working')
+           
         
       },
       removeTodo(index){
