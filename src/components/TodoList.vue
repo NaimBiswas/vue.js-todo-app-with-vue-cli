@@ -108,7 +108,10 @@ export default {
          this.todos.splice(index, 1)
       },
       doneEdite(todo){
-         todo.edite = false;
+         if(todo.title.trim().length == 0){
+            todo.title = this.beforeEditCache
+         }
+            todo.edite = false;
       },
       cancleEdite(todo){
          todo.title = this.beforeEditCache
