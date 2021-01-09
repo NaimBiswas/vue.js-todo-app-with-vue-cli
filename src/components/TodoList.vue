@@ -42,11 +42,11 @@ export default {
          newTodo: '',
          idForTodo: 4,
          todos:[
-         {'id':1, 'title': 'Finish Vue ScreanCast', 'completed': false},
+         {'id':1, 'title': 'Finish Vue ScreanCast', 'completed': false, 'edite': false},
          
-         {'id':2, 'title': 'Take Over Wold', 'completed': false},
+         {'id':2, 'title': 'Take Over Wold', 'completed': false,'edite': false},
          
-         {'id':3, 'title': 'Failer Is better to success', 'completed': false}, 
+         {'id':3, 'title': 'Failer Is better to success', 'completed': false, 'edite': false}, 
          ],
       }
       
