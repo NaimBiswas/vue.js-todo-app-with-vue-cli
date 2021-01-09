@@ -9,7 +9,7 @@
           <td>ID</td>
           <td>Title</td>
           <td>Compelete</td>
-          <td>Action</td>
+          <td>Delete</td>
        </tr>      
         <tr v-for="(todo, index) in todos"  :key="todo.id">
                <td>{{ todo.id }}</td>
