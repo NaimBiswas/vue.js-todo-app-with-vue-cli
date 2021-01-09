@@ -15,7 +15,7 @@
                <td>{{ todo.id }}</td>
                <td>{{ todo.title }}</td>
                <td  >Completed</td>
-               <td class="remove" style="text-align:center"  >&times;</td>
+               <td @click="removeTodo" class="remove" style="text-align:center"  >&times;</td>
          </tr>       
    </table>
      
@@ -51,8 +51,11 @@ export default {
             this.newTodo = '';
             this.idForTodo++;
          }
+      },
+         removeTodo(){
+            
+         }
          
-      }
    }
 
 }
