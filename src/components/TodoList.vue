@@ -28,7 +28,14 @@
                    
                      
                </td>
-                  <input v-else  type="text" v-model="todo.title">
+                  <input
+                  class="fff"
+                   v-else  type="text" v-model="todo.title"
+                  @blur="doneEdite(todo)"
+                  @keyup.enter="doneEdite(todo)"
+                  @keyup.esc="cancleEdite(todo)"
+                  v-focus
+                  >
                
                
                <td v-if="todos.completed = todos.completed" >
@@ -71,6 +78,13 @@ export default {
       }
       
    },
+   directives:{
+     focus:{
+        inserted(el){
+           el.focus()
+        }
+     } 
+   },
    methods:{
       addTodo(){
          if(!this.newTodo == ''){
@@ -85,13 +99,20 @@ export default {
          }
       },
       editTodo(todo){
-     
+         this.beforeEditCache = todo.title;
             todo.edite = true;
            
         
       },
       removeTodo(index){
          this.todos.splice(index, 1)
+      },
+      doneEdite(todo){
+         todo.edite = false;
+      },
+      cancleEdite(todo){
+         todo.title = this.beforeEditCache
+         todo.edite = false;
       }
       
    }
@@ -100,6 +121,12 @@ export default {
 </script>
 
 <style>
+.fff{
+   
+    margin-top: 10px;
+    padding: 2px;
+
+}
 .todo-input{
    border-radius: 5px;
     border-color: #41b883;
@@ -136,5 +163,8 @@ table{
 }
 input{
    font-size: 18px;
+}
+td{
+   padding: 9px;
 }
 </style>
