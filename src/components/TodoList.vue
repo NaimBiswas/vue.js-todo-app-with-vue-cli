@@ -13,7 +13,18 @@
        </tr>      
         <tr v-for="(todo, index) in todos"  :key="todo.id">
                <td>{{ todo.id }}</td>
-               <td>{{ todo.title }}</td>
+               
+               
+               <td>
+                <div class="">
+                  {{ todo.title }}    
+               </div> 
+               <div class="">
+                  <input type="text" v-model="todo.title">
+               </div> 
+               </td>
+               
+               
                <td  >Completed</td>
                <td @click="removeTodo(index)" class="remove" style="text-align:center"  >&times;</td>
          </tr>       
