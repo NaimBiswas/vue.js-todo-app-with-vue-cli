@@ -15,17 +15,28 @@
                <td>{{ todo.id }}</td>
                
                
-               <td>
-                <div class="">
-                  {{ todo.title }}    
-               </div> 
-               <div class="">
-                  <input type="text" v-model="todo.title">
-               </div> 
+               <td   
+                  @dblclick="editTodo(todo)"
+                  v-if="!todo.edite"
+                  >
+                 
+                     {{ todo.title }} 
+                     <strong>
+                        {{ todo.edite }}
+                     </strong>  
+                         
+                   
+                     
                </td>
+                  <input v-else  type="text" v-model="todo.title">
                
                
-               <td  >Completed</td>
+               <td v-if="todos.completed = todos.completed" >
+                  Complete <strong>{{ todos.completed }}</strong>
+               </td>
+               <td v-else>
+                  Not Complete <strong>{{ todos.completed }}</strong>
+               </td>
                <td @click="removeTodo(index)" class="remove" style="text-align:center"  >&times;</td>
          </tr>       
    </table>
@@ -40,13 +51,22 @@ export default {
    data() {
       return {
          newTodo: '',
-         idForTodo: 4,
+         idForTodo: 3,
          todos:[
-         {'id':1, 'title': 'Finish Vue ScreanCast', 'completed': false, 'edite': false},
-         
-         {'id':2, 'title': 'Take Over Wold', 'completed': false,'edite': false},
-         
-         {'id':3, 'title': 'Failer Is better to success', 'completed': false, 'edite': false}, 
+               {
+               'id':1,
+               'title': 'Finish Vue ScreanCast', 
+               'completed': true,
+               'edite': false,
+               },
+               
+               {
+                  'id':2, 
+                  'title': 'Take Overg  Wold',
+                  'completed': true,
+                  'edite': false,
+               },
+              
          ],
       }
       
@@ -58,10 +78,17 @@ export default {
                id: this.idForTodo,
                title: this.newTodo,
                completed: false,
+               edite: true,
             });
             this.newTodo = '';
             this.idForTodo++;
          }
+      },
+      editTodo(todo){
+     
+            todo.edite = true;
+            alert('this is working')
+        
       },
       removeTodo(index){
          this.todos.splice(index, 1)
@@ -106,5 +133,8 @@ table{
    cursor: pointer;
    color: red;
    font-size: 22px;
+}
+input{
+   font-size: 18px;
 }
 </style>
