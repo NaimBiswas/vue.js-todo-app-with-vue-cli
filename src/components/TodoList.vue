@@ -9,11 +9,13 @@
           <td>ID</td>
           <td>Title</td>
           <td>Compelete</td>
+          <td>Action</td>
        </tr>      
         <tr v-for="todo in todos"  :key="todo.id">
                <td>{{ todo.id }}</td>
                <td>{{ todo.title }}</td>
                <td  >Completed</td>
+               <td class="remove" style="text-align:center"  >&times;</td>
          </tr>       
    </table>
      
