@@ -52,8 +52,8 @@ export default {
             this.idForTodo++;
          }
       },
-      removeTodo(){
-         
+      removeTodo(index){
+         this.todos.splice(index, 1)
       }
       
    }
