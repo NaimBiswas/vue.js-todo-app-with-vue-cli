@@ -101,7 +101,7 @@ export default {
                id: this.idForTodo,
                title: this.newTodo,
                completed: false,
-               edite: true,
+               edite: false,
             });
             this.newTodo = '';
             this.idForTodo++;
